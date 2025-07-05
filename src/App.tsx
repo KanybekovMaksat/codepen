@@ -2,27 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Code, Eye, Trash2, Monitor, ChevronDown, ChevronUp, FileText, Link, List, Table, Edit3, Layout, Star } from 'lucide-react';
 
 const popularTags = [
-  { tag: '<h1>', description: 'заголовок', color: 'from-red-400 to-red-600', textColor: 'text-white' },
-  { tag: '<p>', description: 'абзац', color: 'from-blue-400 to-blue-600', textColor: 'text-white' },
-  { tag: '<div>', description: 'блок', color: 'from-green-400 to-green-600', textColor: 'text-white' },
-  { tag: '<a>', description: 'ссылка', color: 'from-purple-400 to-purple-600', textColor: 'text-white' },
-  { tag: '<img>', description: 'картинка', color: 'from-orange-400 to-orange-600', textColor: 'text-white' },
-  { tag: '<button>', description: 'кнопка', color: 'from-pink-400 to-pink-600', textColor: 'text-white' },
-  { tag: '<ul>', description: 'список', color: 'from-indigo-400 to-indigo-600', textColor: 'text-white' },
-  { tag: '<li>', description: 'элемент', color: 'from-teal-400 to-teal-600', textColor: 'text-white' },
-  { tag: '<span>', description: 'строка', color: 'from-yellow-400 to-yellow-600', textColor: 'text-gray-800' },
-  { tag: '<strong>', description: 'жирный', color: 'from-gray-400 to-gray-600', textColor: 'text-white' }
+  { tag: '<h1></h1>', description: 'заголовок', color: 'from-red-400 to-red-600', textColor: 'text-white' },
+  { tag: '<p></p>', description: 'абзац', color: 'from-blue-400 to-blue-600', textColor: 'text-white' },
+  { tag: '<div></div>', description: 'блок', color: 'from-green-400 to-green-600', textColor: 'text-white' },
+  { tag: '<a href=""></a>', description: 'ссылка', color: 'from-purple-400 to-purple-600', textColor: 'text-white' },
+  { tag: '<img src="" alt="" />', description: 'картинка', color: 'from-orange-400 to-orange-600', textColor: 'text-white' },
+  { tag: '<button></button>', description: 'кнопка', color: 'from-pink-400 to-pink-600', textColor: 'text-white' },
+  { tag: '<ul></ul>', description: 'список', color: 'from-indigo-400 to-indigo-600', textColor: 'text-white' },
+  { tag: '<li></li>', description: 'элемент', color: 'from-teal-400 to-teal-600', textColor: 'text-white' },
+  { tag: '<span></span>', description: 'строка', color: 'from-yellow-400 to-yellow-600', textColor: 'text-gray-800' },
+  { tag: '<strong></strong>', description: 'жирный', color: 'from-gray-400 to-gray-600', textColor: 'text-white' }
 ];
 
 const tagCategories = {
   structure: {
     name: '🧱 Структура и разметка',
     tags: [
-      { tag: '<html>', description: 'корень HTML-документа' },
-      { tag: '<head>', description: 'метаинформация' },
-      { tag: '<body>', description: 'основное содержимое' },
-      { tag: '<div>', description: 'блочный контейнер' },
-      { tag: '<span>', description: 'строчный контейнер' }
+      { tag: '<html></html>', description: 'корень HTML-документа' },
+      { tag: '<head></head>', description: 'метаинформация' },
+      { tag: '<body></body>', description: 'основное содержимое' },
+      { tag: '<div></div>', description: 'блочный контейнер' },
+      { tag: '<span></span>', description: 'строчный контейнер' }
     ],
     color: 'from-blue-500 to-blue-700',
     icon: '🧱'
@@ -30,13 +30,13 @@ const tagCategories = {
   text: {
     name: '📝 Текст и заголовки',
     tags: [
-      { tag: '<h1>', description: 'основной заголовок' },
-      { tag: '<h2>', description: 'подзаголовок' },
-      { tag: '<h3>', description: 'заголовок третьего уровня' },
-      { tag: '<p>', description: 'абзац текста' },
-      { tag: '<strong>', description: 'жирный акцент' },
-      { tag: '<em>', description: 'курсивный акцент' },
-      { tag: '<br>', description: 'перенос строки' }
+      { tag: '<h1></h1>', description: 'основной заголовок' },
+      { tag: '<h2></h2>', description: 'подзаголовок' },
+      { tag: '<h3></h3>', description: 'заголовок третьего уровня' },
+      { tag: '<p></p>', description: 'абзац текста' },
+      { tag: '<strong></strong>', description: 'жирный акцент' },
+      { tag: '<em></em>', description: 'курсивный акцент' },
+      { tag: '<br />', description: 'перенос строки' }
     ],
     color: 'from-green-500 to-green-700',
     icon: '📝'
@@ -44,8 +44,8 @@ const tagCategories = {
   links: {
     name: '🔗 Ссылки и медиа',
     tags: [
-      { tag: '<a href="">', description: 'ссылка' },
-      { tag: '<img src="" alt="">', description: 'изображение' }
+      { tag: '<a href=""></a>', description: 'ссылка' },
+      { tag: '<img src="" alt="" />', description: 'изображение' }
     ],
     color: 'from-purple-500 to-purple-700',
     icon: '🔗'
@@ -53,9 +53,9 @@ const tagCategories = {
   lists: {
     name: '📋 Списки',
     tags: [
-      { tag: '<ul>', description: 'список с точками' },
-      { tag: '<ol>', description: 'нумерованный список' },
-      { tag: '<li>', description: 'элемент списка' }
+      { tag: '<ul></ul>', description: 'список с точками' },
+      { tag: '<ol></ol>', description: 'нумерованный список' },
+      { tag: '<li></li>', description: 'элемент списка' }
     ],
     color: 'from-orange-500 to-orange-700',
     icon: '📋'
@@ -63,9 +63,9 @@ const tagCategories = {
   tables: {
     name: '🧮 Таблицы',
     tags: [
-      { tag: '<table>', description: 'таблица' },
-      { tag: '<tr>', description: 'строка таблицы' },
-      { tag: '<td>', description: 'ячейка таблицы' }
+      { tag: '<table></table>', description: 'таблица' },
+      { tag: '<tr></tr>', description: 'строка таблицы' },
+      { tag: '<td></td>', description: 'ячейка таблицы' }
     ],
     color: 'from-red-500 to-red-700',
     icon: '🧮'
@@ -73,10 +73,10 @@ const tagCategories = {
   forms: {
     name: '✅ Формы',
     tags: [
-      { tag: '<form>', description: 'форма' },
-      { tag: '<input type="text">', description: 'поле ввода' },
-      { tag: '<label>', description: 'подпись элемента' },
-      { tag: '<button>', description: 'кнопка' }
+      { tag: '<form></form>', description: 'форма' },
+      { tag: '<input type="text" />', description: 'поле ввода' },
+      { tag: '<label></label>', description: 'подпись элемента' },
+      { tag: '<button></button>', description: 'кнопка' }
     ],
     color: 'from-pink-500 to-pink-700',
     icon: '✅'
@@ -84,20 +84,21 @@ const tagCategories = {
   additional: {
     name: '⚙️ Дополнительно',
     tags: [
-      { tag: '<section>', description: 'логический раздел' },
-      { tag: '<header>', description: 'верхняя часть' },
-      { tag: '<footer>', description: 'нижняя часть' },
-      { tag: '<main>', description: 'основной контент' },
-      { tag: '<nav>', description: 'навигационное меню' }
+      { tag: '<section></section>', description: 'логический раздел' },
+      { tag: '<header></header>', description: 'верхняя часть' },
+      { tag: '<footer></footer>', description: 'нижняя часть' },
+      { tag: '<main></main>', description: 'основной контент' },
+      { tag: '<nav></nav>', description: 'навигационное меню' }
     ],
     color: 'from-gray-500 to-gray-700',
     icon: '⚙️'
   }
 };
 
+
 function App() {
-  const [htmlCode, setHtmlCode] = useState('<!DOCTYPE html>\n<html>\n<head>\n  <title>Мой сайт</title>\n</head>\n<body>\n  <h1>Добро пожаловать!</h1>\n  <p>Это мой первый сайт.</p>\n</body>\n</html>');
-  const [cssCode, setCssCode] = useState('body {\n  font-family: Arial, sans-serif;\n  margin: 0;\n  padding: 20px;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n}\n\nh1 {\n  color: #ffeb3b;\n  text-align: center;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n}');
+  const [htmlCode, setHtmlCode] = useState('');
+  const [cssCode, setCssCode] = useState('');
   const [previewContent, setPreviewContent] = useState('');
   const [activeView, setActiveView] = useState<'html' | 'css' | 'preview'>('html');
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
